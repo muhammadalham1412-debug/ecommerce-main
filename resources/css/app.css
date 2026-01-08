@@ -1,0 +1,231 @@
+/* ================================================
+   FILE: resources/css/app.css
+   FUNGSI: Entry point untuk semua CSS
+   ================================================ */
+
+/* Import Bootstrap CSS */
+/* Kita import di sini agar ikut ter-compile oleh Vite dan bisa di-minify saat production */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Import Bootstrap Icons */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* ================================================
+   CUSTOM STYLES - Variabel dan Override
+   ================================================ */
+
+:root {
+  /* Warna Brand Toko */
+  --primary-color: #4f46e5; /* Indigo */
+  --secondary-color: #10b981; /* Emerald */
+  --accent-color: #f59e0b; /* Amber */
+
+  /* Warna Text */
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+}
+
+/* Override Bootstrap Primary */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  border-color: #4338ca;
+}
+
+/* ================================================
+   LAYOUT STYLES
+   ================================================ */
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: var(--text-dark);
+}
+
+.hero-gradiant {
+  background: rgb(2, 2, 122);
+}
+
+/* Navbar Custom */
+.navbar-brand {
+  color: rgb(88, 4, 4);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  color: #fff;
+}
+
+/* Card Produk */
+.product-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge Diskon */
+.badge-discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ef4444;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.icon {
+  color: rgb(88, 4, 4);
+}
+
+.btn-color {
+  color: rgb(88, 4, 4);
+  border-radius: 4px;
+}
+
+.btn-search {
+  color: rgb(88, 4, 4);
+  border-radius: 4px;
+}
+
+.text-price {
+  color: rgb(88, 4, 4);
+}
+
+.color-kernjang {
+  color: rgb(88, 4, 4);
+}
+
+.btn-bayar {
+  background-color: rgb(88, 4, 4);
+  color: white;
+  border-radius: 8px;
+}
+
+.color-total {
+  color: rgb(88, 4, 4);
+}
+
+/* =================================================
+   AUTH UI – MAROON GRADIENT + ELEGANT ANIMATION
+   Digunakan untuk: Login, Register, Verify Email
+   ================================================= */
+
+/* ---------- COLOR VARIABLES ---------- */
+:root {
+    --maroon-dark: rgb(88, 4, 4);
+    --maroon-main: rgb(120, 15, 15);
+    --maroon-light: rgb(160, 40, 40);
+}
+
+/* ---------- BACKGROUND ANIMATION ---------- */
+.auth-background {
+    min-height: 100vh;
+    background: linear-gradient(
+        120deg,
+        var(--maroon-dark),
+        var(--maroon-main),
+        var(--maroon-light),
+        var(--maroon-main)
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+    display: flex;
+    align-items: center;
+}
+
+/* Smooth gradient movement */
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------- CARD ---------- */
+.auth-card {
+    border: none;
+    border-radius: 14px;
+    animation: fadeSlideUp 0.8s ease;
+}
+
+/* Card entrance animation */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card header */
+.auth-card-header {
+    background: linear-gradient(135deg, var(--maroon-dark), var(--maroon-main));
+    color: #ffffff;
+    border-radius: 14px 14px 0 0;
+}
+
+/* ---------- INPUT ---------- */
+.auth-input:focus {
+    border-color: var(--maroon-main);
+    box-shadow: 0 0 0 0.2rem rgba(88, 4, 4, 0.25);
+}
+
+/* ---------- BUTTON (LOGIN / REGISTER / VERIFY) ---------- */
+.btn-login {
+    background: linear-gradient(135deg, var(--maroon-dark), var(--maroon-main));
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, rgb(70, 0, 0), rgb(100, 10, 10));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(88, 4, 4, 0.45);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(88, 4, 4, 0.4);
+}
+
+/* ---------- LINK ---------- */
+.auth-link {
+    color: var(--maroon-main);
+    transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+    color: var(--maroon-dark);
+    text-decoration: underline;
+}
+
+/* ---------- GOOGLE BUTTON ---------- */
+.btn-google {
+    border: 1px solid var(--maroon-main);
+    color: var(--maroon-main);
+    transition: all 0.3s ease;
+}
+
+.btn-google:hover {
+    background-color: var(--maroon-main);
+    color: #ffffff;
+}
