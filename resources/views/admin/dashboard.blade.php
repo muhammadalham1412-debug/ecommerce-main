@@ -154,6 +154,10 @@
             <a href="{{ route('admin.categories.index') }}" class="btn btn-outline-secondary py-3 fw-semibold">
               <i class="ti ti-category me-2"></i> Kelola Kategori
             </a>
+
+            <a href="{{ route('admin.reports.sales') }}" class="btn btn-outline-secondary py-3 fw-semibold">
+              <i class="ti ti-category me-2"></i> Kelola Laporan
+            </a>
           </div>
         </div>
       </div>
